@@ -2,7 +2,7 @@ import math
 
 file_content = None
 
-with open("./Data/pima-indians-diabetes-normalised.csv", 'r') as f:
+with open("./Data/pima-CFS-without-desc.csv", 'r') as f:
 	file_content = f.read().split()
 
 for line in file_content:
@@ -51,7 +51,7 @@ for fold in out_list:
 			no += 1
 	print(f"Total {count} | {yes} yes {no} no")
 
-with open("./Data/pima-folds.csv", "a") as f:
+with open("./Data/pima-CFS-folds.csv", "a") as f:
 	for i in range(10):
 		f.write(f"fold{i+1}\n")
 		for line in out_list[i]:

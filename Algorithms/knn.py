@@ -70,4 +70,5 @@ def classify_nn(training_data, testing_data, k):
     return accurate_prediction_count / len(testing_data)
 
 if __name__ == "__main__":
-    print(classify_nn("training.csv", "testing.csv", 3))
+    print(classify_nn_f("training.csv", "testing.csv", 3))
+    

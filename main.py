@@ -36,25 +36,74 @@ def train_test_split(data, fold_number):
 	return train, test
 
 
-def ten_fold_cross_validation(data, algorithm, knn_k):
+def ten_fold_cross_validation(data, algorithm, **kwargs):
 	accuracies = []
 	for i in range(len(data)):
-		print("Current fold: ", i+1)
 		train, test = train_test_split(data, i)
-		accuracies.append(algorithm(train, test, knn_k))
+		if algorithm == nb:
+			accuracies.append(algorithm(train, test))
+		else:
+			accuracies.append(algorithm(train, test, kwargs['k']))
 	return accuracies
 
 if __name__ == '__main__':
-	data = split_data('Data/pima-10-folds.csv')
+	data_without_feature_selection = split_data('Data/pima-10-folds.csv')
+	data_with_feature_selection = split_data('Data/pima-CFS-folds.csv')
 
-	# 1NN
-	one_nn_accuracies = ten_fold_cross_validation(data, knn, 1)
-	print('1-NN: ', one_nn_accuracies)
+	# 1NN without Feature Selection
+	one_nn_accuracies_without_feature_selection = \
+		ten_fold_cross_validation(data_without_feature_selection, knn, k=1)
+	print('1-NN w/o CFS: ', one_nn_accuracies_without_feature_selection)
+	print('Average: ', sum(one_nn_accuracies_without_feature_selection) / len(one_nn_accuracies_without_feature_selection))
+	print()
 
-	# 5NN
-	five_nn_accuracies = ten_fold_cross_validation(data, knn, 5)
-	print('5-NN: ', five_nn_accuracies)
+	# 1NN with Feature Selection
+	one_nn_accuracies_with_feature_selection = \
+		ten_fold_cross_validation(data_with_feature_selection, knn, k=1)
+	print('1-NN with CFS: ', one_nn_accuracies_with_feature_selection)
+	print('Average: ', sum(one_nn_accuracies_with_feature_selection) / len(one_nn_accuracies_with_feature_selection))
+	print()
 	
+	# 5NN without Feature Selection
+	five_nn_accuracies_without_feature_selection = \
+		ten_fold_cross_validation(data_without_feature_selection, knn, k=5)
+	print('5-NN w/o CFS: ', five_nn_accuracies_without_feature_selection)
+	print('Average: ', sum(five_nn_accuracies_without_feature_selection) / len(five_nn_accuracies_without_feature_selection))
+	print()
 
+	# 5NN with Feature Selection
+	five_nn_accuracies_with_feature_selection = \
+		ten_fold_cross_validation(data_with_feature_selection, knn, k=5)
+	print('5-NN with CFS: ', five_nn_accuracies_with_feature_selection)
+	print('Average: ', sum(five_nn_accuracies_with_feature_selection) / len(five_nn_accuracies_with_feature_selection))
+	print()
+
+	# 10NN without Feature Selection
+	ten_nn_accuracies_without_feature_selection = \
+		ten_fold_cross_validation(data_without_feature_selection, knn, k=10)
+	print('10-NN w/o CFS: ', ten_nn_accuracies_without_feature_selection)
+	print('Average: ', sum(ten_nn_accuracies_without_feature_selection) / len(ten_nn_accuracies_without_feature_selection))
+	print()
+
+	# 10NN with Feature Selection
+	ten_nn_accuracies_with_feature_selection = \
+		ten_fold_cross_validation(data_with_feature_selection, knn, k=10)
+	print('10-NN with CFS: ', ten_nn_accuracies_with_feature_selection)
+	print('Average: ', sum(ten_nn_accuracies_with_feature_selection) / len(ten_nn_accuracies_with_feature_selection))
+	print()
+
+	# Naive Bayes without Feature Selection
+	nb_accuracies_without_feature_selection = \
+		ten_fold_cross_validation(data_without_feature_selection, nb)
+	print('NB w/o CFS: ', nb_accuracies_without_feature_selection)
+	print('Average: ', sum(nb_accuracies_without_feature_selection) / len(nb_accuracies_without_feature_selection))
+	print()
+
+	# Naive Bayes with Feature Selection
+	nb_accuracies_with_feature_selection = \
+		ten_fold_cross_validation(data_with_feature_selection, nb)
+	print('NB with CFS: ', nb_accuracies_with_feature_selection)
+	print('Average: ', sum(nb_accuracies_with_feature_selection) / len(nb_accuracies_with_feature_selection))
+	print()
 
 	
