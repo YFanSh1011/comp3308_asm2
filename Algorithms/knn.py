@@ -3,11 +3,12 @@ import math
 def calculate_distance(source, target):
     sum_of_squares = 0
     for i in range(len(target)):
-        sum_of_squares += (source[i] - target[i]) ** 2
+        if (type(target[i]) != str):
+            sum_of_squares += (source[i] - target[i]) ** 2
     return math.sqrt(sum_of_squares)
     
 
-def classify_nn(training_filename, testing_filename, k):
+def classify_nn_f(training_filename, testing_filename, k):
     # Read the dataset and convert them into correct data format:
     training_data = []
     testing_data = []
@@ -45,6 +46,28 @@ def classify_nn(training_filename, testing_filename, k):
         predictions.append("yes" if count_yes >= 0 else "no")
     
     return predictions
+
+
+def classify_nn(training_data, testing_data, k):
+    # For each training data point, initialise an array, store the calculate the distance
+    # the sort the array and pick the k closest data points
+    # Format: (distance, classifier)
+    accurate_prediction_count = 0
+    for data_point in testing_data:
+        distances = []
+        for training_point in training_data:
+            distances.append((calculate_distance(training_point, data_point), training_point[-1]))
+        distances.sort(key=lambda x: x[0])
+        selected_points = distances[:k]
+        count_yes = 0
+        for point in selected_points:
+            if point[1] == 'yes':
+                count_yes += 1
+            else:
+                count_yes -= 1
+        if ("yes" if count_yes >= 0 else "no") == data_point[-1]:
+            accurate_prediction_count += 1
+    return accurate_prediction_count / len(testing_data)
 
 if __name__ == "__main__":
     print(classify_nn("training.csv", "testing.csv", 3))
