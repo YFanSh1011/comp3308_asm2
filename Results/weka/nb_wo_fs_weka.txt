@@ -1,0 +1,102 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     pima-normalised-with-label
+Instances:    768
+Attributes:   9
+              num_pregnant
+              glucose_concentration
+              blood_pressure
+              skin_thickness
+              serum_insulin
+              bmi
+              dpf
+              age
+              classification
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                          Class
+Attribute                   yes      no
+                         (0.35)  (0.65)
+========================================
+num_pregnant
+  mean                    0.2929  0.2014
+  std. dev.               0.2166  0.1774
+  weight sum                 268     500
+  precision               0.0625  0.0625
+
+glucose_concentration
+  mean                    0.6332  0.4304
+  std. dev.               0.1904  0.1594
+  weight sum                 268     500
+  precision               0.0075  0.0075
+
+blood_pressure
+  mean                    0.5211  0.4787
+  std. dev.                0.122  0.1214
+  weight sum                 268     500
+  precision               0.0222  0.0222
+
+skin_thickness
+  mean                    0.2703  0.2271
+  std. dev.               0.0934  0.0935
+  weight sum                 268     500
+  precision               0.0204  0.0204
+
+serum_insulin
+  mean                    0.1993  0.1533
+  std. dev.               0.1152  0.0903
+  weight sum                 268     500
+  precision               0.0054  0.0054
+
+bmi
+  mean                    0.3514  0.2594
+  std. dev.               0.1346  0.1329
+  weight sum                 268     500
+  precision                0.004   0.004
+
+dpf
+  mean                    0.2017  0.1502
+  std. dev.               0.1587  0.1275
+  weight sum                 268     500
+  precision               0.0019  0.0019
+
+age
+  mean                    0.2682  0.1709
+  std. dev.               0.1819  0.1937
+  weight sum                 268     500
+  precision               0.0196  0.0196
+
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         577               75.1302 %
+Incorrectly Classified Instances       191               24.8698 %
+Kappa statistic                          0.4425
+Mean absolute error                      0.2819
+Root mean squared error                  0.426 
+Relative absolute error                 62.0134 %
+Root relative squared error             89.3796 %
+Total Number of Instances              768     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.604    0.170    0.656      0.604    0.629      0.443    0.815     0.661     yes
+                 0.830    0.396    0.797      0.830    0.813      0.443    0.815     0.888     no
+Weighted Avg.    0.751    0.317    0.747      0.751    0.749      0.443    0.815     0.809     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 162 106 |   a = yes
+  85 415 |   b = no
+

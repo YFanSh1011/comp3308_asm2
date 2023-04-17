@@ -1,13 +1,4 @@
-@relation 'pima-indians-diabetes-normalised copy-weka.filters.unsupervised.attribute.Remove-V-R2,5-9'
-
-@attribute glucose_concentration numeric
-@attribute serum_insulin numeric
-@attribute bmi numeric
-@attribute dpf numeric
-@attribute age numeric
-@attribute classification {yes,no}
-
-@data
+glucose_concentration,serum_insulin,bmi,dpf,age,classification
 0.670968,0.169471,0.314928,0.234415,0.483333,yes
 0.264516,0.169471,0.171779,0.116567,0.166667,no
 0.896774,0.169471,0.104294,0.253629,0.183333,yes

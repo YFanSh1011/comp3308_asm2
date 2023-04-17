@@ -1,0 +1,81 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     pima-CFS
+Instances:    768
+Attributes:   6
+              glucose_concentration
+              serum_insulin
+              bmi
+              dpf
+              age
+              classification
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                          Class
+Attribute                   yes      no
+                         (0.35)  (0.65)
+========================================
+glucose_concentration
+  mean                    0.6332  0.4304
+  std. dev.               0.1904  0.1594
+  weight sum                 268     500
+  precision               0.0075  0.0075
+
+serum_insulin
+  mean                    0.1993  0.1533
+  std. dev.               0.1152  0.0903
+  weight sum                 268     500
+  precision               0.0054  0.0054
+
+bmi
+  mean                    0.3514  0.2594
+  std. dev.               0.1346  0.1329
+  weight sum                 268     500
+  precision                0.004   0.004
+
+dpf
+  mean                    0.2017  0.1502
+  std. dev.               0.1587  0.1275
+  weight sum                 268     500
+  precision               0.0019  0.0019
+
+age
+  mean                    0.2682  0.1709
+  std. dev.               0.1819  0.1937
+  weight sum                 268     500
+  precision               0.0196  0.0196
+
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         586               76.3021 %
+Incorrectly Classified Instances       182               23.6979 %
+Kappa statistic                          0.4558
+Mean absolute error                      0.2852
+Root mean squared error                  0.4137
+Relative absolute error                 62.7477 %
+Root relative squared error             86.793  %
+Total Number of Instances              768     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.571    0.134    0.695      0.571    0.627      0.461    0.825     0.666     yes
+                 0.866    0.429    0.790      0.866    0.826      0.461    0.825     0.904     no
+Weighted Avg.    0.763    0.326    0.757      0.763    0.757      0.461    0.825     0.821     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 153 115 |   a = yes
+  67 433 |   b = no
+
