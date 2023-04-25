@@ -93,7 +93,8 @@ def classify_nb(training_data, testing_data):
     no_mean_values = []
     no_stdev_values = []
     no_count = 0
-    
+    confusion_matrix = {"True Positive": 0, "False Positive": 0, "True Negative": 0, "False Negative": 0}
+
     for entry in training_data:
         if entry[-1].strip() == 'yes':
             yes_count += 1
@@ -135,11 +136,18 @@ def classify_nb(training_data, testing_data):
         yes_prob *= (yes_count)/(yes_count + no_count)
         no_prob *= (no_count)/(yes_count + no_count)
         
-        if (yes_prob >= no_prob and testing_data_entry[-1] == "yes") \
-            or (yes_prob < no_prob and testing_data_entry[-1] == "no"):
+        if (yes_prob >= no_prob and testing_data_entry[-1] == "yes"):
+            confusion_matrix["True Positive"] += 1
+            accuracte_prediction_count += 1
+        elif (yes_prob >= no_prob and testing_data_entry[-1] == "no"):
+            confusion_matrix["False Positive"] += 1
+        elif (yes_prob < no_prob and testing_data_entry[-1] == "yes"):
+            confusion_matrix["False Negative"] += 1
+        else:
+            confusion_matrix["True Negative"] += 1
             accuracte_prediction_count += 1
         
-    return accuracte_prediction_count / len(testing_data)
+    return accuracte_prediction_count / len(testing_data), confusion_matrix
 
 
 if __name__ == "__main__":

@@ -15,7 +15,13 @@
         "Max": 0.7662337662337663,
         "Min": 0.64,
         "Mean": 0.6830533151059466,
-        "Standard Deviation": 0.042628078128132005
+        "Standard Deviation": 0.042628078128132005,
+        "Confusion Matrix": {
+            "True Positive": 149,
+            "False Positive": 124,
+            "True Negative": 375,
+            "False Negative": 119
+        }
     },
     "1NN with Feature Selection": {
         "Accuracies": [
@@ -33,7 +39,13 @@
         "Max": 0.7466666666666667,
         "Min": 0.5844155844155844,
         "Mean": 0.6824588744588744,
-        "Standard Deviation": 0.045229092498835444
+        "Standard Deviation": 0.045229092498835444,
+        "Confusion Matrix": {
+            "True Positive": 147,
+            "False Positive": 123,
+            "True Negative": 377,
+            "False Negative": 121
+        }
     },
     "5NN without Feature Selection": {
         "Accuracies": [
@@ -51,7 +63,13 @@
         "Max": 0.8181818181818182,
         "Min": 0.6753246753246753,
         "Mean": 0.7535798587377536,
-        "Standard Deviation": 0.05624916763327896
+        "Standard Deviation": 0.05624916763327896,
+        "Confusion Matrix": {
+            "True Positive": 167,
+            "False Positive": 88,
+            "True Negative": 411,
+            "False Negative": 101
+        }
     },
     "5NN with Feature Selection": {
         "Accuracies": [
@@ -69,7 +87,13 @@
         "Max": 0.8571428571428571,
         "Min": 0.6233766233766234,
         "Mean": 0.7512900432900433,
-        "Standard Deviation": 0.0625881371638312
+        "Standard Deviation": 0.0625881371638312,
+        "Confusion Matrix": {
+            "True Positive": 166,
+            "False Positive": 89,
+            "True Negative": 411,
+            "False Negative": 102
+        }
     },
     "Naive Bayes without Feature Selection": {
         "Accuracies": [
@@ -87,7 +111,13 @@
         "Max": 0.8311688311688312,
         "Min": 0.7142857142857143,
         "Mean": 0.7510004556846663,
-        "Standard Deviation": 0.03360897522242573
+        "Standard Deviation": 0.03360897522242573,
+        "Confusion Matrix": {
+            "True Positive": 162,
+            "False Positive": 85,
+            "True Negative": 414,
+            "False Negative": 106
+        }
     },
     "Naive Bayes with Feature Selection": {
         "Accuracies": [
@@ -105,6 +135,12 @@
         "Max": 0.8181818181818182,
         "Min": 0.6883116883116883,
         "Mean": 0.7605541125541124,
-        "Standard Deviation": 0.04482978321624986
+        "Standard Deviation": 0.04482978321624986,
+        "Confusion Matrix": {
+            "True Positive": 150,
+            "False Positive": 66,
+            "True Negative": 434,
+            "False Negative": 118
+        }
     }
 }

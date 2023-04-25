@@ -1,0 +1,68 @@
+Q: 
+For a classifier training on < 1000 data entries on naive bayes method with ten-fold validation, would 75% be consider a reasonable accuracy?
+
+A:
+The answer depends on the specific dataset and the classification task at hand, but in general, an accuracy of 75% could be considered reasonable for a classifier trained on less than 1000 data entries using the Naive Bayes method and ten-fold validation. 
+
+However, it's important to keep in mind that accuracy alone may not be sufficient to fully evaluate the performance of a classifier. Other metrics such as precision, recall, and F1 score should also be considered, especially if the dataset is imbalanced or if certain types of errors are more important than others. 
+
+Additionally, it's important to consider the specific domain and context of the classification task. For example, a 75% accuracy may be acceptable for a relatively simple binary classification task, but may not be sufficient for a more complex multi-class classification task where misclassification of certain classes may have significant consequences.
+
+In summary, while 75% accuracy may be considered reasonable for a classifier trained on less than 1000 data entries with the Naive Bayes method and ten-fold validation, it's important to consider other metrics and the specific context of the classification task.
+
+
+Q:
+Can you specify on precision, recall and F1 score? What’s their significance in evaluating the effectiveness of a classifier? Besides, what does confusion matrix do?
+
+A:
+Precision, recall, and F1 score are commonly used metrics to evaluate the effectiveness of a classifier, especially in cases where the data is imbalanced or when different types of errors have different consequences.
+
+Precision is the fraction of true positives (correctly classified positive examples) among all examples that are classified as positive by the classifier. In other words, it measures the classifier's ability to avoid false positives. 
+
+Recall is the fraction of true positives among all actual positive examples in the dataset. It measures the classifier's ability to identify all positive examples, regardless of whether it also classified some negative examples as positive (false negatives).
+
+F1 score is the harmonic mean of precision and recall, and provides a combined measure of the classifier's ability to correctly identify positive examples and avoid false positives. F1 score is especially useful when the dataset is imbalanced, and can help balance the tradeoff between precision and recall.
+
+Confusion matrix is a table that shows the number of true positive, false positive, true negative, and false negative predictions made by a classifier. It's a useful tool for visualizing and analyzing the performance of a classifier, and can be used to calculate metrics such as precision, recall, and F1 score.
+
+In summary, precision, recall, and F1 score provide a more nuanced evaluation of a classifier's performance compared to accuracy alone, especially in cases where the data is imbalanced or when different types of errors have different consequences. The confusion matrix is a useful tool for visualizing and analyzing the performance of a classifier, and can be used to calculate these metrics.
+
+
+
+Q:
+If the data set we used is the famous "pima" dataset, what are some considerations when evaluating the classifiers?
+
+A:
+The "pima" dataset is a well-known dataset that contains medical data from Pima Indian women in Arizona, and is commonly used for diabetes prediction. When evaluating classifiers trained on the "pima" dataset, here are some considerations to keep in mind:
+
+1. Imbalanced data: The "pima" dataset is known to be imbalanced, with a higher proportion of negative examples (non-diabetic) than positive examples (diabetic). When evaluating classifiers, it's important to consider metrics such as precision, recall, and F1 score that account for this imbalance.
+
+2. Feature selection: The "pima" dataset contains several features, including glucose level, body mass index, and age, among others. It's important to select the most relevant features for the classification task to avoid overfitting or underfitting the data.
+
+3. Cross-validation: When evaluating classifiers on the "pima" dataset, it's important to use cross-validation techniques such as k-fold cross-validation to ensure that the results are robust and not dependent on the particular split of the data into training and testing sets.
+
+4. Model selection: The "pima" dataset is not too large, so it's important to choose a model that can learn from limited data and is not too complex. Naive Bayes and logistic regression are popular choices for this dataset, but other models such as decision trees, random forests, and support vector machines may also be considered.
+
+5. Evaluation metrics: In addition to accuracy, precision, recall, and F1 score, other evaluation metrics such as AUC-ROC (Area Under the Receiver Operating Characteristic Curve) and calibration curves can also be used to evaluate the performance of classifiers on the "pima" dataset.
+
+Overall, when evaluating classifiers trained on the "pima" dataset, it's important to consider the imbalanced nature of the data, the relevance of the features, the use of cross-validation techniques, the selection of an appropriate model, and the choice of evaluation metrics beyond just accuracy.
+
+
+
+Q:
+Overall, what are some use cases for smaller ML models like naive bayes and KNN?
+
+A:
+Smaller machine learning models like Naive Bayes and k-Nearest Neighbors (k-NN) have several use cases, including:
+
+1. Text classification: Naive Bayes is commonly used for text classification tasks, such as sentiment analysis or spam detection. It's fast and can work well with limited data.
+
+2. Recommender systems: k-NN can be used for collaborative filtering in recommender systems. It's simple and easy to implement, and can work well with sparse data.
+
+3. Anomaly detection: Naive Bayes and k-NN can both be used for anomaly detection tasks, such as fraud detection. They can be trained on normal data and used to identify deviations from the normal pattern.
+
+4. Image classification: While larger deep learning models such as convolutional neural networks (CNNs) are more commonly used for image classification tasks, k-NN can still be used for small-scale image classification problems.
+
+5. Medical diagnosis: Naive Bayes and k-NN can both be used for medical diagnosis tasks, such as predicting the likelihood of a certain disease based on patient symptoms. They can work well with small datasets and can be useful for decision support.
+
+Overall, smaller machine learning models like Naive Bayes and k-NN can be useful in scenarios where there is limited data, or where a simple and interpretable model is preferred over a complex and computationally expensive one. They may not perform as well as larger models on complex tasks, but can still be effective in certain use cases.
