@@ -2,46 +2,64 @@
 Vertical Comparisons
 ------------------------
 1NN without Feature Selection vs 1NN with Feature Selection:
-Z-score: (0.017916310391452667, 0.07269248432260522)
+Z-score: (0.017916310391452674, 0.07269248432260522)
 There IS NOT a statistical significance between the two algorithms.
+1NN WO FS: Precision: 0.5458, Recall: 0.556, F1 Score: 0.5509
+1NN W FS: Precision: 0.5444, Recall: 0.5485, F1 Score: 0.5464
 
 5NN without Feature Selection vs 5NN with Feature Selection:
-Z-score: (0.00874054017067899, 0.047787142672793326)
+Z-score: (0.008740540170678993, 0.047787142672793326)
 There IS NOT a statistical significance between the two algorithms.
+5NN WO FS: Precision: 0.6549, Recall: 0.6231, F1 Score: 0.6386
+5NN W FS: Precision: 0.651, Recall: 0.6194, F1 Score: 0.6348
 
 Naive Bayes without Feature Selection vs Naive Bayes with Feature Selection:
-Z-score: (0.01294372347100881, 0.030702209543345273)
+Z-score: (0.012943723471008813, 0.030702209543345273)
 There IS NOT a statistical significance between the two algorithms.
+NB WO FS: Precision: 0.6559, Recall: 0.6045, F1 Score: 0.6292
+NB W FS: Precision: 0.6944, Recall: 0.5597, F1 Score: 0.6198
 
 
 ------------------------
 Horizontal Comparisons Without Feature Selection
 ------------------------
 1NN without Feature Selection vs 5NN without Feature Selection:
-Z-score: (0.046273074109491406, 0.1103644287385378)
+Z-score: (0.04627307410949141, 0.1103644287385378)
 There IS NOT a statistical significance between the two algorithms.
+1NN WO FS: Precision: 0.5458, Recall: 0.556, F1 Score: 0.5509
+5NN WO FS: Precision: 0.6549, Recall: 0.6231, F1 Score: 0.6386
 
 1NN without Feature Selection vs Naive Bayes without Feature Selection:
 Z-score: (0.04165230216457065, 0.09424197899286844)
 There IS NOT a statistical significance between the two algorithms.
+1NN WO FS: Precision: 0.5458, Recall: 0.556, F1 Score: 0.5509
+NB WO FS: Precision: 0.6559, Recall: 0.6045, F1 Score: 0.6292
 
 5NN without Feature Selection vs Naive Bayes without Feature Selection:
-Z-score: (0.02725177284438247, 0.061300972655731464)
+Z-score: (0.027251772844382474, 0.061300972655731464)
 There IS NOT a statistical significance between the two algorithms.
+5NN WO FS: Precision: 0.6549, Recall: 0.6231, F1 Score: 0.6386
+NB WO FS: Precision: 0.6559, Recall: 0.6045, F1 Score: 0.6292
 
 
 ------------------------
 Horizontal Comparison With Feature Selection
 ------------------------
 1NN with Feature Selection vs 5NN with Feature Selection:
-Z-score: (0.027736028082863018, 0.10992630957947466)
+Z-score: (0.027736028082863025, 0.10992630957947466)
 There IS NOT a statistical significance between the two algorithms.
+1NN W FS: Precision: 0.5444, Recall: 0.5485, F1 Score: 0.5464
+5NN W FS: Precision: 0.651, Recall: 0.6194, F1 Score: 0.6348
 
 1NN with Feature Selection vs Naive Bayes with Feature Selection:
 Z-score: (0.04747788122432822, 0.10871259496614802)
 There IS NOT a statistical significance between the two algorithms.
+1NN W FS: Precision: 0.5444, Recall: 0.5485, F1 Score: 0.5464
+NB W FS: Precision: 0.6944, Recall: 0.5597, F1 Score: 0.6198
 
 5NN with Feature Selection vs Naive Bayes with Feature Selection:
-Z-score: (0.018225992529686545, 0.06263980833611432)
+Z-score: (0.018225992529686548, 0.06263980833611432)
 There IS NOT a statistical significance between the two algorithms.
+5NN W FS: Precision: 0.651, Recall: 0.6194, F1 Score: 0.6348
+NB W FS: Precision: 0.6944, Recall: 0.5597, F1 Score: 0.6198
 
