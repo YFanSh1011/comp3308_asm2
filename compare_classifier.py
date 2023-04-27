@@ -18,13 +18,12 @@ def calculate_statistical_significance(data_set1, data_set2, confidence_level=0.
 	stdev = math.sqrt(sum_of_squares / (len(differences) - 1))
 
 	# Calculate the z-score:
-	z_score_upper = mean_diff + abs(t.ppf((1 + confidence_level) / 2, len(data_set1) - 1) \
-		* (stdev / math.sqrt(len(differences))))
-	z_score_lower = mean_diff - abs(t.ppf((1 + confidence_level) / 2, len(data_set1) - 1) \
-		* (stdev / math.sqrt(len(differences))))
+	t_stat = abs(t.ppf((1 - confidence_level) / 2, len(data_set1) - 1))
+	z_score_upper = mean_diff + t_stat * (stdev / math.sqrt(len(differences)))
+	z_score_lower = mean_diff - t_stat * (stdev / math.sqrt(len(differences)))
 	
 	print("Z-score: ({}, {})".format(z_score_lower, z_score_upper))
-	return (z_score_upper >= 0 and  0 >= z_score_lower)
+	return (z_score_upper >= 0 and 0 >= z_score_lower)
 
 
 def confusion_matrix_statistics(cm):
@@ -60,7 +59,7 @@ if __name__ == "__main__":
 	nb_w_fs = data_dict['Naive Bayes with Feature Selection']["Accuracies"]
 	nb_w_fs_cm = data_dict['Naive Bayes with Feature Selection']["Confusion Matrix"]
 	
-	with open("Results/comparison_result.txt", "w") as sys.stdout:
+	with open("Results/comparison_result_95.txt", "w") as sys.stdout:
 		print("------------------------")
 		print("Vertical Comparisons")
 		print("------------------------")
