@@ -4,7 +4,7 @@ import sys
 from scipy.stats import t
 
 
-def calculate_statistical_significance(data_set1, data_set2, confidence_level=0.95):
+def calculate_statistical_significance(data_set1, data_set2, confidence_level=0.99):
 	# Calculate the differences between the accuracy of each folds:
 	differences = []
 	for i in range(len(data_set1)):
@@ -23,7 +23,7 @@ def calculate_statistical_significance(data_set1, data_set2, confidence_level=0.
 	z_score_lower = mean_diff - t_stat * (stdev / math.sqrt(len(differences)))
 	
 	print("Z-score: ({}, {})".format(z_score_lower, z_score_upper))
-	return (z_score_upper >= 0 and 0 >= z_score_lower)
+	return (z_score_upper >0 and z_score_lower > 0)
 
 
 def confusion_matrix_statistics(cm):
@@ -59,7 +59,7 @@ if __name__ == "__main__":
 	nb_w_fs = data_dict['Naive Bayes with Feature Selection']["Accuracies"]
 	nb_w_fs_cm = data_dict['Naive Bayes with Feature Selection']["Confusion Matrix"]
 	
-	with open("Results/comparison_result_95.txt", "w") as sys.stdout:
+	with open("Results/comparison_result_99.txt", "w") as sys.stdout:
 		print("------------------------")
 		print("Vertical Comparisons")
 		print("------------------------")
